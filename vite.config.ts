@@ -2,6 +2,7 @@
  * This is the base config for vite.
  * When building, the adapter config is used which loads this file and extends it.
  */
+import { staticAdapter } from '@builder.io/qwik-city/adapters/static/vite';
 import { defineConfig, type UserConfig } from "vite";
 import { qwikVite } from "@builder.io/qwik/optimizer";
 import { qwikCity } from "@builder.io/qwik-city/vite";
@@ -26,6 +27,10 @@ export default defineConfig(({ command, mode }): UserConfig => {
       qwikVite(),
       tsconfigPaths({ root: "." }),
       tailwindcss(),
+      staticAdapter({
+        origin: 'https://claudette.site', // <- Agrega tu dominio aquí
+        sitemapOutFile: null, // <- Esto evita que Qwik cree el sitemap.xml
+      }),
     ],
     
     // This tells Vite which dependencies to pre-build in dev mode.
