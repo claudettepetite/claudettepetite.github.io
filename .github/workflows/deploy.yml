@@ -31,14 +31,13 @@ jobs:
         run: npm ci
 
       - name: Build static site
-        run: npx tsc && npx vite build
-        
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
+          # Qwik City Static normalmente exporta el sitio final a 'dist' o 'dist/pages'. 
+          # Si da 404 con 'dist', cámbialo aquí abajo a 'dist/pages'
           path: ./dist
 
   deploy:
