@@ -59,7 +59,7 @@ export default component$(() => {
   // Manejador de estado para el aviso +18
   const showAgeGate = useSignal(false);
 
-  // Reemplazo de useEffect para manejar el scroll del body
+  // eslint-disable-next-line qwik/no-use-visible-task
   useVisibleTask$(({ track }) => {
     track(() => showAgeGate.value);
 
