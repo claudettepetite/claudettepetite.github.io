@@ -21,6 +21,7 @@ errorOnDuplicatesPkgDeps(devDependencies, dependencies);
 
 export default defineConfig(({ command, mode }): UserConfig => {
   return {
+    base: '/claudettepetite/', // <--- Añade esto para que apunte correctamente a la subruta de GitHub Pages
     plugins: [
       qwikCity(),
       qwikVite(),
