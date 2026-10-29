@@ -16,7 +16,7 @@ permissions:
 # Solo permite un despliegue concurrente, evitando carreras de subida
 concurrency:
   group: "pages"
-  cancel-in-running: true
+  cancel-in-progress: true
 
 jobs:
   build:
