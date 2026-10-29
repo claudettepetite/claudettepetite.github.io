@@ -29,7 +29,6 @@ export default defineConfig(({ command, mode }): UserConfig => {
       tailwindcss(),
       staticAdapter({
         origin: 'https://claudette.site', // <- Agrega tu dominio aquí
-        sitemapOutFile: null, // <- Esto evita que Qwik cree el sitemap.xml
       }),
     ],
     
